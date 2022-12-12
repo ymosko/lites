@@ -24,7 +24,18 @@ input.on_button_pressed(Button.A, on_button_pressed_a)
 
 def on_button_pressed_ab():
     pins.digital_write_pin(DigitalPin.P1, 1)
-    basic.pause(150000)
+    basic.pause(150000000)
+    pins.digital_write_pin(DigitalPin.P2, 1)
+    basic.pause(150000000)
+    pins.digital_write_pin(DigitalPin.P3, 1)
+    basic.pause(150000000)
+    pins.digital_write_pin(DigitalPin.P4, 1)
+    basic.pause(150000000)
+    pins.digital_write_pin(DigitalPin.P6, 1)
+    basic.pause(150000000)
+    pins.digital_write_pin(DigitalPin.P7, 1)
+    basic.pause(150000000)
+    pins.digital_write_pin(DigitalPin.P8, 1)
 input.on_button_pressed(Button.AB, on_button_pressed_ab)
 
 def on_button_pressed_b():
@@ -52,3 +63,7 @@ def on_gesture_shake():
     basic.pause(1000)
     pins.digital_write_pin(DigitalPin.P9, 1)
 input.on_gesture(Gesture.SHAKE, on_gesture_shake)
+
+def on_logo_touched():
+    pins.digital_write_pin(DigitalPin.P5, 1)
+input.on_logo_event(TouchButtonEvent.TOUCHED, on_logo_touched)
